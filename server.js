@@ -12,9 +12,12 @@ console.log(`Blacklist: ${originBlacklist}`)
 var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
 console.log(`Whitelist: ${originWhitelist}`)
 function parseEnvList(env) {
+  console.log(`Parsing ${env}`)
   if (!env) {
+    console.log('Nothing to parse')
     return [];
   }
+  console.log(`Result ${env.split(',')}`)
   return env.split(',');
 }
 console.log('Done parsing blacklist and whitelist')
